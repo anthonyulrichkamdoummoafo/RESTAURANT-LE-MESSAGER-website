@@ -1,0 +1,20 @@
+import type { GalleryImage } from "@/types";
+
+export const GALLERY_IMAGES: GalleryImage[] = [
+  { id: "g1", src: "salle-principale", alt: { fr: "Salle principale du restaurant", en: "Main dining room" }, category: "interieur", span: "large" },
+  { id: "g2", src: "facade-exterieure", alt: { fr: "Façade du restaurant à Ange Raphaël", en: "Restaurant facade in Ange Raphaël" }, category: "exterieur", span: "tall" },
+  { id: "g3", src: "ndole-signature", alt: { fr: "Ndolé signature de la maison", en: "House signature ndolé" }, category: "plats" },
+  { id: "g4", src: "cuisine-equipe", alt: { fr: "L'équipe en cuisine", en: "The kitchen team at work" }, category: "cuisine", span: "wide" },
+  { id: "g5", src: "terrasse-soiree", alt: { fr: "Terrasse en soirée", en: "Terrace in the evening" }, category: "exterieur" },
+  { id: "g6", src: "poisson-braise-table", alt: { fr: "Poisson braisé dressé en salle", en: "Braised fish plated in the dining room" }, category: "plats", span: "tall" },
+  { id: "g7", src: "bar-cocktails", alt: { fr: "Espace bar et boissons", en: "Bar and drinks area" }, category: "interieur" },
+  { id: "g8", src: "anniversaire-prive", alt: { fr: "Célébration d'anniversaire privée", en: "Private birthday celebration" }, category: "evenements", span: "wide" },
+  { id: "g9", src: "chef-dressage", alt: { fr: "Le chef lors du dressage d'un plat", en: "The chef plating a dish" }, category: "cuisine" },
+  { id: "g10", src: "salle-mariage", alt: { fr: "Salle aménagée pour un mariage", en: "Room set up for a wedding" }, category: "evenements", span: "large" },
+  { id: "g11", src: "entree-restaurant", alt: { fr: "Entrée du restaurant", en: "Restaurant entrance" }, category: "exterieur" },
+  { id: "g12", src: "brochettes-grill", alt: { fr: "Brochettes sur le grill", en: "Skewers on the grill" }, category: "plats" },
+  { id: "g13", src: "coin-lounge", alt: { fr: "Coin lounge et détente", en: "Lounge and relaxation corner" }, category: "interieur", span: "wide" },
+  { id: "g14", src: "seminaire-entreprise", alt: { fr: "Séminaire d'entreprise organisé sur place", en: "Corporate seminar hosted on-site" }, category: "evenements" },
+  { id: "g15", src: "desserts-assortiment", alt: { fr: "Assortiment de desserts maison", en: "Assortment of house desserts" }, category: "plats", span: "tall" },
+  { id: "g16", src: "cuisine-preparation", alt: { fr: "Préparation minutieuse en cuisine", en: "Careful preparation in the kitchen" }, category: "cuisine" },
+];

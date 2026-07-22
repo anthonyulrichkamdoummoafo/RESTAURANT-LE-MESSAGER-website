@@ -1,0 +1,106 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --surface: 250 247 242; /* cream */
+    --surface-elevated: 255 255 255;
+    --ink: 24 24 24;
+    --ink-muted: 90 86 82;
+    --border-subtle: 224 216 202;
+  }
+
+  .dark {
+    --surface: 24 24 24;
+    --surface-elevated: 32 32 32;
+    --ink: 250 247 242;
+    --ink-muted: 178 172 164;
+    --border-subtle: 54 51 48;
+  }
+
+  * {
+    @apply border-[rgb(var(--border-subtle))];
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-[rgb(var(--surface))] text-[rgb(var(--ink))] font-body antialiased;
+    transition: background-color 0.35s ease, color 0.35s ease;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+
+  ::selection {
+    @apply bg-gold-400/40 text-ink;
+  }
+
+  :focus-visible {
+    outline: 2px solid #D4AF37;
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs md:text-sm font-semibold tracking-[0.2em] uppercase text-wine-500 dark:text-gold-400;
+  }
+
+  .section-pad {
+    @apply py-20 md:py-28;
+  }
+
+  .container-narrow {
+    @apply max-w-3xl mx-auto;
+  }
+
+  .bg-noise::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.035;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .glass {
+    @apply bg-white/10 dark:bg-white/5 backdrop-blur-xl border border-white/20 dark:border-white/10;
+  }
+
+  .kicker-divider {
+    @apply h-px w-12 bg-gradient-to-r from-gold-400 to-transparent;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-[rgb(var(--surface))];
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-wine-500/40 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-wine-500/70;
+}
