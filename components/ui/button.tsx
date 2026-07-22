@@ -40,8 +40,6 @@ export interface ButtonProps
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
   ({ className, variant, size, asChild = false, onClick, children, ...props }, ref) => {
-    const Comp = asChild ? Slot : "button";
-
     const [ripples, setRipples] = React.useState<{ x: number; y: number; id: number }[]>([]);
 
     function handleClick(e: React.MouseEvent<HTMLButtonElement>) {
@@ -57,23 +55,30 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       onClick?.(e);
     }
 
+    if (asChild) {
+      return (
+        <Slot className={cn(buttonVariants({ variant, size, className }))} ref={ref} onClick={onClick} {...props}>
+          {children}
+        </Slot>
+      );
+    }
+
     return (
-      <Comp
+      <button
         className={cn(buttonVariants({ variant, size, className }))}
         ref={ref}
-        onClick={asChild ? onClick : handleClick}
+        onClick={handleClick}
         {...props}
       >
         {children}
-        {!asChild &&
-          ripples.map((r) => (
-            <span
-              key={r.id}
-              className="pointer-events-none absolute rounded-full bg-white/40 animate-ripple"
-              style={{ left: r.x - 10, top: r.y - 10, width: 20, height: 20 }}
-            />
-          ))}
-      </Comp>
+        {ripples.map((r) => (
+          <span
+            key={r.id}
+            className="pointer-events-none absolute rounded-full bg-white/40 animate-ripple"
+            style={{ left: r.x - 10, top: r.y - 10, width: 20, height: 20 }}
+          />
+        ))}
+      </button>
     );
   }
 );
