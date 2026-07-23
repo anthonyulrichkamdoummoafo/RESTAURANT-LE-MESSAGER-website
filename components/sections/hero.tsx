@@ -1,11 +1,11 @@
 "use client";
 
+import * as React from "react";
 import Link from "next/link";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { useLocale } from "@/lib/i18n/locale-provider";
 import { Button } from "@/components/ui/button";
-import { PlaceholderImage } from "@/components/ui/placeholder-image";
 
 export function Hero() {
   const { dict } = useLocale();
@@ -13,16 +13,25 @@ export function Hero() {
   const y = useTransform(scrollY, [0, 600], [0, 160]);
   const opacity = useTransform(scrollY, [0, 400], [1, 0.2]);
   const scale = useTransform(scrollY, [0, 600], [1, 1.12]);
+  const [autoplay, setAutoplay] = React.useState(true);
+
+  React.useEffect(() => {
+    setAutoplay(!window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+  }, []);
 
   return (
-    <section className="relative h-[92vh] min-h-[640px] w-full overflow-hidden">
+    <section className="relative h-[92vh] min-h-[640px] w-full overflow-hidden bg-ink">
       <motion.div style={{ y, scale }} className="absolute inset-0">
-        <PlaceholderImage
-          id="hero-main"
-          category="plats-traditionnels"
-          label="Photographie signature — plat vedette du Messager"
-          className="h-full"
-          iconClassName="h-16 w-16 md:h-20 md:w-20"
+        <video
+          className="h-full w-full object-cover"
+          src="/video/hero.mp4"
+          poster="/images/hero-poster.jpg"
+          autoPlay={autoplay}
+          muted
+          loop
+          playsInline
+          preload="auto"
+          aria-hidden="true"
         />
       </motion.div>
       <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/55 to-ink/20" />

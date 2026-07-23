@@ -1,10 +1,11 @@
 "use client";
 
 import Link from "next/link";
-import { Facebook, Instagram, MapPin, Phone, Mail, UtensilsCrossed } from "lucide-react";
+import { Facebook, Instagram, MapPin, Phone, Mail } from "lucide-react";
 import { useLocale } from "@/lib/i18n/locale-provider";
 import { RESTAURANT, OPENING_HOURS } from "@/lib/data/restaurant-info";
 import { Newsletter } from "@/components/sections/newsletter";
+import { Logo } from "@/components/logo";
 import { t } from "@/lib/utils";
 
 const NAV_ITEMS = [
@@ -25,10 +26,7 @@ export function Footer() {
       <div className="container section-pad grid gap-12 md:grid-cols-2 lg:grid-cols-4">
         <div className="lg:col-span-1">
           <Link href="/" className="flex items-center gap-2">
-            <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gold-400 text-ink">
-              <UtensilsCrossed className="h-4 w-4" />
-            </span>
-            <span className="font-display text-xl font-semibold">{RESTAURANT.shortName}</span>
+            <Logo height={48} variant="light-text" />
           </Link>
           <p className="mt-4 text-sm text-cream/60 max-w-xs leading-relaxed">{dict.footer.tagline}</p>
           <div className="mt-6 flex items-center gap-3">
