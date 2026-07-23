@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useLocale } from "@/lib/i18n/locale-provider";
-import { PlaceholderImage } from "@/components/ui/placeholder-image";
+import { Media } from "@/components/ui/media";
 import { Button } from "@/components/ui/button";
 import { Reveal } from "@/components/motion/reveal";
 import { AnimatedCounter } from "@/components/animated-counter";
@@ -25,11 +25,20 @@ export function Story() {
         <Reveal>
           <div className="relative">
             <div className="relative aspect-[4/5] overflow-hidden rounded-3xl shadow-soft">
-              <PlaceholderImage id="story-main" category="cuisine" label="Notre cuisine, notre histoire" />
+              <Media
+                id="story-main"
+                category="cuisine"
+                photo="/images/gallery/cuisine-preparation-reelle.jpg"
+                label="Notre cuisine, notre histoire"
+              />
             </div>
             <div className="absolute -bottom-8 -right-6 hidden w-48 rounded-2xl border border-[rgb(var(--border-subtle))] bg-[rgb(var(--surface-elevated))] p-4 shadow-soft sm:block">
               <div className="aspect-square overflow-hidden rounded-xl">
-                <PlaceholderImage id="story-detail" category="plats-traditionnels" />
+                <Media
+                  id="story-detail"
+                  category="plats-traditionnels"
+                  photo="/images/gallery/assiette-generose.jpg"
+                />
               </div>
             </div>
           </div>

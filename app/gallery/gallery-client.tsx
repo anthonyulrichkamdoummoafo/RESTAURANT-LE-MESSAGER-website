@@ -4,7 +4,7 @@ import * as React from "react";
 import { motion } from "framer-motion";
 import { useLocale } from "@/lib/i18n/locale-provider";
 import { GALLERY_IMAGES } from "@/lib/data/gallery";
-import { PlaceholderImage } from "@/components/ui/placeholder-image";
+import { Media } from "@/components/ui/media";
 import { Dialog, DialogTrigger, DialogContent } from "@/components/ui/dialog";
 import { Reveal } from "@/components/motion/reveal";
 import { t, cn } from "@/lib/utils";
@@ -81,7 +81,7 @@ export function GalleryClient() {
                 <DialogTrigger asChild>
                   <button className="h-full w-full">
                     <div className="h-full w-full transition-transform duration-700 ease-signature group-hover:scale-110">
-                      <PlaceholderImage id={img.id} category={img.category} label={t(img.alt, locale)} />
+                      <Media id={img.id} category={img.category} photo={img.photo} label={t(img.alt, locale)} />
                     </div>
                     <div className="absolute inset-0 flex items-end bg-gradient-to-t from-ink/70 via-transparent to-transparent p-4 opacity-0 transition-opacity group-hover:opacity-100">
                       <span className="text-left text-xs text-cream">{t(img.alt, locale)}</span>
@@ -90,7 +90,7 @@ export function GalleryClient() {
                 </DialogTrigger>
                 <DialogContent>
                   <div className="aspect-video w-full overflow-hidden rounded-xl">
-                    <PlaceholderImage id={img.id} category={img.category} label={t(img.alt, locale)} />
+                    <Media id={img.id} category={img.category} photo={img.photo} label={t(img.alt, locale)} />
                   </div>
                   <p className="p-4 text-center text-sm text-[rgb(var(--ink-muted))]">{t(img.alt, locale)}</p>
                 </DialogContent>

@@ -2,7 +2,7 @@
 
 import { useLocale } from "@/lib/i18n/locale-provider";
 import { STAFF } from "@/lib/data/content";
-import { PlaceholderImage } from "@/components/ui/placeholder-image";
+import { Media } from "@/components/ui/media";
 import { Reveal } from "@/components/motion/reveal";
 import { PatternDivider } from "@/components/pattern-divider";
 import { t } from "@/lib/utils";
@@ -48,7 +48,12 @@ export function AboutClient() {
         <div className="mt-16 grid items-center gap-12 lg:grid-cols-2">
           <Reveal>
             <div className="aspect-[4/5] overflow-hidden rounded-3xl shadow-soft">
-              <PlaceholderImage id="about-history" category="interieur" />
+              <Media
+                id="about-history"
+                category="interieur"
+                photo="/images/gallery/equipe-groupe.jpg"
+                label={locale === "fr" ? "L'équipe du Messager" : "The Le Messager team"}
+              />
             </div>
           </Reveal>
           <Reveal delay={0.1}>
@@ -80,7 +85,7 @@ export function AboutClient() {
           <div className="grid items-center gap-10 lg:grid-cols-[220px_1fr]">
             <Reveal className="mx-auto">
               <div className="relative h-44 w-44 overflow-hidden rounded-full border-4 border-gold-400/40 shadow-gold md:h-56 md:w-56">
-                <PlaceholderImage id={chef.id} category="cuisine" />
+                <Media id={chef.id} category="cuisine" />
               </div>
             </Reveal>
             <Reveal delay={0.1}>

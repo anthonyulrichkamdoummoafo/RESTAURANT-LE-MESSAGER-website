@@ -42,6 +42,8 @@ export interface GalleryImage {
   alt: LocalizedText;
   category: "interieur" | "exterieur" | "plats" | "cuisine" | "evenements";
   span?: "tall" | "wide" | "large" | "normal";
+  /** Path to a real photo in /public, when available. Falls back to PlaceholderImage otherwise. */
+  photo?: string;
 }
 
 export interface Testimonial {

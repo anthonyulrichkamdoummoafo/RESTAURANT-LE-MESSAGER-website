@@ -4,7 +4,7 @@ export const GALLERY_IMAGES: GalleryImage[] = [
   { id: "g1", src: "salle-principale", alt: { fr: "Salle principale du restaurant", en: "Main dining room" }, category: "interieur", span: "large" },
   { id: "g2", src: "facade-exterieure", alt: { fr: "Façade du restaurant à Ange Raphaël", en: "Restaurant facade in Ange Raphaël" }, category: "exterieur", span: "tall" },
   { id: "g3", src: "ndole-signature", alt: { fr: "Ndolé signature de la maison", en: "House signature ndolé" }, category: "plats" },
-  { id: "g4", src: "cuisine-equipe", alt: { fr: "L'équipe en cuisine", en: "The kitchen team at work" }, category: "cuisine", span: "wide" },
+  { id: "g4", src: "cuisine-equipe", photo: "/images/gallery/cuisine-preparation-reelle.jpg", alt: { fr: "L'équipe en cuisine", en: "The kitchen team at work" }, category: "cuisine", span: "wide" },
   { id: "g5", src: "terrasse-soiree", alt: { fr: "Terrasse en soirée", en: "Terrace in the evening" }, category: "exterieur" },
   { id: "g6", src: "poisson-braise-table", alt: { fr: "Poisson braisé dressé en salle", en: "Braised fish plated in the dining room" }, category: "plats", span: "tall" },
   { id: "g7", src: "bar-cocktails", alt: { fr: "Espace bar et boissons", en: "Bar and drinks area" }, category: "interieur" },
@@ -17,4 +17,9 @@ export const GALLERY_IMAGES: GalleryImage[] = [
   { id: "g14", src: "seminaire-entreprise", alt: { fr: "Séminaire d'entreprise organisé sur place", en: "Corporate seminar hosted on-site" }, category: "evenements" },
   { id: "g15", src: "desserts-assortiment", alt: { fr: "Assortiment de desserts maison", en: "Assortment of house desserts" }, category: "plats", span: "tall" },
   { id: "g16", src: "cuisine-preparation", alt: { fr: "Préparation minutieuse en cuisine", en: "Careful preparation in the kitchen" }, category: "cuisine" },
+  { id: "g17", src: "equipe-groupe", photo: "/images/gallery/equipe-groupe.jpg", alt: { fr: "Toute l'équipe du Messager, prête à vous accueillir", en: "The whole Le Messager team, ready to welcome you" }, category: "exterieur", span: "wide" },
+  { id: "g18", src: "portrait-equipe", photo: "/images/gallery/portrait-equipe.jpg", alt: { fr: "Un membre de notre équipe en salle", en: "A member of our front-of-house team" }, category: "interieur" },
+  { id: "g19", src: "pizza-maison", photo: "/images/gallery/pizza-maison.jpg", alt: { fr: "Pizza maison, une touche gourmande à la carte", en: "House pizza, a crowd-pleasing addition to the menu" }, category: "plats" },
+  { id: "g20", src: "cocktail-signature", photo: "/images/gallery/cocktail-signature.jpg", alt: { fr: "Cocktail signature multicolore", en: "Signature multicolor cocktail" }, category: "plats", span: "tall" },
+  { id: "g21", src: "assiette-genereuse", photo: "/images/gallery/assiette-generose.jpg", alt: { fr: "Assiette généreuse : viande mijotée, frites et riz", en: "A generous plate: slow-cooked meat, fries and rice" }, category: "plats" },
 ];

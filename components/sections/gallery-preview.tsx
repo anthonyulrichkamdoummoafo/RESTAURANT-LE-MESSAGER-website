@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 import { useLocale } from "@/lib/i18n/locale-provider";
 import { GALLERY_IMAGES } from "@/lib/data/gallery";
-import { PlaceholderImage } from "@/components/ui/placeholder-image";
+import { Media } from "@/components/ui/media";
 import { Reveal } from "@/components/motion/reveal";
 import { Button } from "@/components/ui/button";
 import { t } from "@/lib/utils";
@@ -46,7 +46,7 @@ export function GalleryPreview() {
                 transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
                 className="h-full min-h-[140px] overflow-hidden rounded-2xl shadow-soft"
               >
-                <PlaceholderImage id={img.id} category={img.category} label={t(img.alt, locale)} />
+                <Media id={img.id} category={img.category} photo={img.photo} label={t(img.alt, locale)} />
               </motion.div>
             </Reveal>
           ))}
